@@ -1,0 +1,47 @@
+{
+    "src_folders" : ["tests"],
+    "output_folder" : "reports",
+    "selenium" : {
+      "start_process" : true,
+      "server_path" : "./lib/selenium-server-standalone-4.0.0-alpha.jar",
+      "log_path" : "",
+      "port" : 4444,
+      "cli_args" : {
+        "webdriver.chrome.driver" : "./node_modules/.bin/chromedriver"
+      }
+    },
+    "webdriver": {
+      "start_process" : true,
+      "server_path": "./node_modules/.bin/chromedriver",
+      "cli_args": [
+        "--log", "debug", "--port=4444"
+      ],
+      "port": 4444
+    },  
+    "test_settings" : {
+      "default" : {
+        "launch_url" : "https://google.com",
+        "selenium_port"  : 4444,
+        "selenium_host"  : "127.0.0.1",
+        "silent": true,
+        "screenshots" : {
+          "enabled" : true,
+          "path" : "reports/sxreenshots/"
+        },
+        "desiredCapabilities": {
+          "browserName": "chrome",
+          "marionette": true
+        }
+      },
+      "chrome" : {
+        "desiredCapabilities": {
+          "browserName": "chrome"
+        }
+      },
+      "edge" : {
+        "desiredCapabilities": {
+          "browserName": "MicrosoftEdge"
+        }
+      }
+    }
+}
